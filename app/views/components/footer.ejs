@@ -1,0 +1,186 @@
+<!--
+    Name: Benton Le
+    Student#: 301174103
+    Date: 10/5/2022
+    Professor: Thiago Vitor De Castilho
+    Assignment: Assignment 1
+    Course: COMP229-402
+-->
+
+<style>
+  *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: acumin-pro, system-ui, sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-size: 14px;
+  background-color: #f4f4f4;
+  align-items: start;
+  min-height: 100vh;
+}
+
+.footer {
+  padding-left: 10px;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+.footer__logo {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: 1.5rem;
+}
+
+.footer__addr h2 {
+  margin-top: 1.3em;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.nav__title {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.footer address {
+  font-style: normal;
+  color: #999;
+}
+
+.footer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  max-width: max-content;
+  background-color: rgb(33, 33, 33, 0.07);
+  border-radius: 100px;
+  color: #2f2f2f;
+  line-height: 0;
+  margin: 0.6em 0;
+  font-size: 1rem;
+  padding: 0 1.3em;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__nav {
+  display: flex;
+	flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.nav__ul a {
+  color: #999;
+}
+
+.nav__ul--extra {
+  column-count: 2;
+  column-gap: 1.25em;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  color: #999;
+}
+  
+.legal__links {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  color: #2f2f2f;
+}
+
+@media screen and (min-width: 24.375em) {
+  .legal .legal__links {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 40.375em) {
+  .footer__nav > * {
+    flex: 1;
+  }
+  
+  .nav__item--extra {
+    flex-grow: 2;
+  }
+  
+  .footer__addr {
+    flex: 1 0px;
+  }
+  
+  .footer__nav {
+    flex: 2 0px;
+  }
+}
+</style>
+<link rel="stylesheet" href="./content/app.css">
+<footer class="footer">
+  <hr>
+  <div class="footer__addr">
+    <h1 class="footer__logo">COMP229-402 - Assignment 1</h1>
+      <h2> Benton Le - 301174103</h2>
+    <address>
+      <a class="footer__btn" href="ble21@my.centennialcollege.ca">Email Me</a>
+    </address>
+  </div>
+  
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">My Info</h2>
+
+      <ul class="nav__ul">
+        <li><a class="nav-link <%= (page == 'about') ? 'active' : ''; %>" aria-current="page" href="/about"><i class="fa-solid fa-circle-info fa-lg"></i> About</a></li>
+        <li><a class="nav-link <%= (page == 'contact') ? 'active' : ''; %>" aria-current="page" href="/contact"><i class="fa-solid fa-envelopes-bulk fa-lg"></i> Contact</a></li>
+        <li><a class="nav-link <%= (page == 'services') ? 'active' : ''; %>" aria-current="page" href="/services"><i class="fa-solid fa-signs-post fa-lg"></i> Services</a></li>
+      </ul>
+    </li>
+    
+    <li class="nav__item nav__item--extra">
+      <h2 class="nav__title">My Work</h2>
+      
+      <ul class="nav__ul nav__ul--extra">
+        <li><a class="nav-link <%= (page == 'projects') ? 'active' : ''; %>" aria-current="page" href="/projects"><i class="fa-solid fa-diagram-project fa-lg"></i> Projects</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+  <div class="legal">
+    <p>&copy; Benton Le</p>
+  </div>
+</footer>

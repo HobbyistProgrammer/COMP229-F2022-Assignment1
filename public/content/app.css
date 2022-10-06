@@ -1,0 +1,31 @@
+/**
+    Name: Benton Le
+    Student#: 301174103
+    Date: 10/5/2022
+    Professor: Thiago Vitor De Castilho
+    Assignment: Assignment 1
+    Course: COMP229-402
+**/
+
+
+*{
+    background-color: lightskyblue;
+    font-family: 'Times New Roman';
+}
+main{
+    height: 550px;
+}
+#link{
+    border-style: solid;
+    background-color: white;
+    text-decoration: none;
+}
+th{
+    padding-right: 30px;
+    padding-left: 30px;
+}
+td{
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size:18px;
+}

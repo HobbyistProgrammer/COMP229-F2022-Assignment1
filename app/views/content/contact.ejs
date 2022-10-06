@@ -1,0 +1,47 @@
+<!--
+    Name: Benton Le
+    Student#: 301174103
+    Date: 10/5/2022
+    Professor: Thiago Vitor De Castilho
+    Assignment: Assignment 1
+    Course: COMP229-402
+-->
+
+<h1> <%= title %>  </h1>
+
+<script>
+    // Function storeData is used to store user contact information
+    // into the local sessionStorage for semi-functional purposes.
+    function storeData(){
+        let name = sessionStorage.setItem("name_key", document.getElementById("name").value);
+        let email = sessionStorage.setItem("email_key", document.getElementById("email").value);
+        let textMessage = sessionStorage.setItem("text_key", document.getElementById("contactComment").value);
+
+        alert("Data Stored Successfully.")
+    }
+</script>
+
+<h1>How to find me?</h1>
+<p style="font-size: 18px">
+    I can be reached through these methods:<br>
+    Phone number: 647-745-4527<br>
+    Email: ble21@my.centennialcollege.ca
+</p>
+
+<br>
+<h2>Send me a direct email now:</h2>
+
+<form id="form1">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter full name"><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="pizza@my.pizza.com"><br>
+
+    <label for="contactComment">Message:</label><br>
+    <textarea width="300px" id="contactComment" rows="4" cols="80"placeholder="Enter Message"></textarea>
+
+    <br>
+    <!-- Form Submit and data storage + .ejs file redirection-->
+    <button onclick="storeData()"><a class="navbar-brand <%= (page == 'about') ? 'active' : ''; %>" aria-current="page" href="/home">Submit</a></button>
+</form>

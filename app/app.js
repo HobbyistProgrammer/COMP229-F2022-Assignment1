@@ -19,13 +19,13 @@ import indexRouter from './routes/index.route.server.js';
 const app = express();
 
 // setup ViewEngine EJS
-app.set('views', path.join(__dirname,'/views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'/views')); // Join views to the directory path starting at root/app/app.js
+app.set('view engine', 'ejs'); // sets the name view engine with ejs
 
-app.use(logger('dev')); 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false}));
-app.use(cookieParser());
+app.use(logger('dev')); // Logger, used to log
+app.use(express.json()); // Middleware of the code that recognizes incoming request as a JSON Object.
+app.use(express.urlencoded({ extended: false})); // same are .json, but this is for strings and arrays.
+app.use(cookieParser()); // Just to get cookies
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(session({
     secret: Secret,

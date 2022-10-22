@@ -6,7 +6,6 @@
     Assignment: Assignment 1
     Course: COMP229-402
 -->
-
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand <%= (page == 'about') ? 'active' : ''; %>" aria-current="page" href="/home"><i class="fa fa-home"></i> Home</a>
@@ -29,6 +28,23 @@
         <li class="nav-item">
           <a class="nav-link <%= (page == 'about') ? 'active' : ''; %>" aria-current="page" href="/contact">Contact Me</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'contact-list') ? 'active' : ''; %>" aria-current="page" href="/contact-list"><i class="fa-solid fa-table-list fa-lg"></i> Business Contacts List</a>
+        </li> 
+        
+        <% if(displayName) { %>
+        
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket fa-lg"></i> Logout</a>
+        </li>
+        
+        <% } else { %>
+        
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket fa-lg"></i> Login</a>
+        </li>
+        
+        <% } %>
       </ul>
       <span class="navbar-text"> 
         <img src="./content/images/logo.png">
